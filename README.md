@@ -1,2 +1,2 @@
 # training-fruit-ninja-clone
-I tried to make a clone of a fruit ninja
+this is my 2nd project on unity where I tried to copy the fruit ninja game
