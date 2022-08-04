@@ -20,7 +20,6 @@ public class Target : MonoBehaviour
   
     void Start()
     {
-        
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
         rb.AddForce(RandomForce(),ForceMode.Impulse);
@@ -40,7 +39,7 @@ public class Target : MonoBehaviour
         return new Vector3(Random.Range(-xRange, xRange), ySpawnPosition);
     }
 
-    private void OnMouseDown()
+    public void DestroyTargets()
     {
         if (!gameManager.isGameOver)
         {
@@ -48,7 +47,6 @@ public class Target : MonoBehaviour
             Destroy(gameObject);
             gameManager.UpdateScore(pointValue);
         }
-        
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -59,5 +57,4 @@ public class Target : MonoBehaviour
         
         Destroy(gameObject);
     }
-
 }
