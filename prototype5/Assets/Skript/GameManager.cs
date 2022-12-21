@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         while (!isGameOver)
         {
-           yield return new  WaitForSeconds(spawnRate);
+            yield return new  WaitForSeconds(spawnRate);
             int indexTarget = Random.Range(0,4);
             Instantiate(targets[indexTarget]);
         }

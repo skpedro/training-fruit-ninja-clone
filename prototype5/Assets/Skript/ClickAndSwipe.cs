@@ -10,7 +10,8 @@ public class ClickAndSwipe : MonoBehaviour
     private Camera cam;
     private TrailRenderer trail;
     private BoxCollider col;
-    private bool swiping = false;
+    private bool swiping = false;
+
     private Vector3 mousePos;
     void Awake()
     {
@@ -50,11 +51,15 @@ public class ClickAndSwipe : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
         Input.mousePosition.y, 10.0f));
         transform.position = mousePos;
-    }    void UpdateComponents()
+    }
+
+    void UpdateComponents()
     {
         trail.enabled = swiping;
         col.enabled = swiping;
-    }    private void OnCollisionEnter(Collision collision)
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Target>())
         {
